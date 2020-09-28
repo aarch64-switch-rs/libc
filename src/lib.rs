@@ -99,6 +99,12 @@ cfg_if! {
 
         mod windows;
         pub use windows::*;
+    } else if #[cfg(target_os = "horizon")] {
+        mod fixed_width_ints;
+        pub use fixed_width_ints::*;
+
+        mod horizon;
+        pub use horizon::*;
     } else if #[cfg(target_os = "cloudabi")] {
         mod fixed_width_ints;
         pub use fixed_width_ints::*;
